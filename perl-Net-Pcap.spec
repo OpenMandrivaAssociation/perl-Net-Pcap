@@ -1,7 +1,7 @@
 %define	module	Net-Pcap
 %define name	perl-Net-Pcap
-%define version 0.12
-%define release %mkrel 3
+%define version 0.14
+%define release %mkrel 1
 
 Summary:	%{module} module for perl
 Name:		%{name}
