@@ -1,21 +1,26 @@
 %define	module	Net-Pcap
-%define name	perl-Net-Pcap
-%define version 0.14
+%define name	perl-%{module}
+%define version 0.15
 %define release %mkrel 1
 
-Summary:	%{module} module for perl
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
+Summary:	Interface to pcap(3) LBL packet capture library 
 License:	GPL or Artistic
 Group:		Development/Perl
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Net/%{module}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{module}/
-BuildRequires:	perl-devel libpcap-devel libpcap
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Source:     http://www.cpan.org/modules/by-module/Net/%{module}-%{version}.tar.gz
+BuildRequires:	libpcap-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
-Interface to pcap(3) LBL packet capture library.
+Net::Pcap is a Perl binding to the LBL pcap(3) library. The README for libpcap describes itself as:
+
+"a system-independent interface for user-level packet capture.
+libpcap provides a portable framework for low-level network
+monitoring.  Applications include network statistics collection,
+security monitoring, network debugging, etc."
 
 %prep
 %setup -q -n %{module}-%{version}
@@ -30,7 +35,8 @@ Interface to pcap(3) LBL packet capture library.
 %install
 %__rm -rf %{buildroot}
 %makeinstall_std
-%__rm -rf $RPM_BUILD_ROOT%{perl_archlib}/perllocal.pod
+%__rm -rf %{buildroot}%{perl_archlib}/perllocal.pod
+%__rm -rf %{buildroot}%{perl_archlib}/Net/._Pcap.pm
 
 %clean
 %__rm -rf %{buildroot}
@@ -38,8 +44,8 @@ Interface to pcap(3) LBL packet capture library.
 %files
 %defattr(-,root,root)
 %doc README
-%{perl_vendorarch}/Net/*
-%{perl_vendorarch}/auto/Net/Pcap/*
+%{perl_vendorarch}/Net
+%{perl_vendorarch}/auto/Net
 %{_mandir}/man3/*
 %{_mandir}/man1/*
 %{_bindir}/*
