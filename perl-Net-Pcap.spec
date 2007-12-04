@@ -16,7 +16,8 @@ BuildRequires:	perl-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
-Net::Pcap is a Perl binding to the LBL pcap(3) library. The README for libpcap describes itself as:
+Net::Pcap is a Perl binding to the LBL pcap(3) library.
+The README for libpcap describes itself as:
 
 "a system-independent interface for user-level packet capture.
 libpcap provides a portable framework for low-level network
