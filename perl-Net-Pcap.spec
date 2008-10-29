@@ -1,7 +1,7 @@
 %define	module	Net-Pcap
 %define name	perl-%{module}
 %define version 0.16
-%define release %mkrel 4
+%define release %mkrel 5
 
 Name:		%{name}
 Version:	%{version}
@@ -13,7 +13,7 @@ Url:		http://search.cpan.org/dist/%{module}/
 Source:     http://www.cpan.org/modules/by-module/Net/%{module}-%{version}.tar.gz
 BuildRequires:	libpcap-devel
 BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Net::Pcap is a Perl binding to the LBL pcap(3) library.
