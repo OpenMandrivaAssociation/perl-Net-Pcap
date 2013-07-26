@@ -1,15 +1,15 @@
 %define	upstream_name	 Net-Pcap
-%define upstream_version 0.16
+%define upstream_version 0.17
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:	2
+Version:    %perl_convert_version 0.17
+Release:	1
 
 Summary:	Interface to pcap(3) LBL packet capture library 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:    http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:    http://www.cpan.org/modules/by-module/Net/Net-Pcap-0.17.tar.gz
 
 BuildRequires:	libpcap-devel
 BuildRequires:	perl-devel
@@ -99,7 +99,7 @@ security monitoring, network debugging, etc."
 - 0.14
 
 
-* Fri Apr 28 2006 Nicolas Lécureuil <neoclust@mandriva.org> 0.12-3mdk
+* Fri Apr 28 2006 Nicolas LÃ©cureuil <neoclust@mandriva.org> 0.12-3mdk
 - Fix SPEC according to Perl Policy
 	- Source URL
 
@@ -149,4 +149,5 @@ security monitoring, network debugging, etc."
 
 * Tue May 27 2003 Thierry Vignaud <tvignaud@mandrakesoft.com> 0.04-4mdk
 - rebuild for new auto{prov,req}
+
 
