@@ -28,7 +28,8 @@ security monitoring, network debugging, etc."
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor --defaultdeps
+%{__perl} Makefile.PL INC=-I//usr/include/pcap LIBS='-L/usr/lib64/ -lpcap'
+#{__perl} Makefile.PL INSTALLDIRS=vendor --defaultdeps
 %make
 
 #check
