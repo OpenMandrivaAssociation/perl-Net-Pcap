@@ -10,8 +10,10 @@ License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
 Source0:    http://www.cpan.org/modules/by-module/Net/Net-Pcap-0.18.tar.gz
+# Adapt a test to libpcap-1.8.0, bug #1375919, CPAN RT#117831
+Patch0:		Net-Pcap-0.18-Adapt-a-test-to-libpcap-1.8.0.patch
 BuildRequires:	pcap
-BuildRequires:	pcap-devel
+BuildRequires:	libpcap-devel
 BuildRequires:	perl-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
@@ -26,14 +28,15 @@ security monitoring, network debugging, etc."
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
+%patch0 -p1
 
 %build
-%{__perl} Makefile.PL INC=-I/usr/include/pcap LIBS='-L/usr/lib64/ -lpcap'
-#{__perl} Makefile.PL INSTALLDIRS=vendor --defaultdeps
+#{__perl} Makefile.PL INC=-I/usr/include/pcap LIBS='-L/usr/lib64/ -lpcap'
+%{__perl} Makefile.PL INSTALLDIRS=vendor --defaultdeps
 %make
 
-#check
-#__make test
+%check
+%__make test
 
 %install
 %__rm -rf %{buildroot}
