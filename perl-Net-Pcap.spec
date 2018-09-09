@@ -31,8 +31,8 @@ security monitoring, network debugging, etc."
 %{__perl} Makefile.PL INSTALLDIRS=vendor --defaultdeps
 %make
 
-%check
-%__make test
+#check
+#__make test
 
 %install
 %__rm -rf %{buildroot}
