@@ -15,7 +15,7 @@ Patch0:		Net-Pcap-0.18-Adapt-a-test-to-libpcap-1.8.0.patch
 BuildRequires:	pcap
 BuildRequires:	libpcap-devel
 BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
+#BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Net::Pcap is a Perl binding to the LBL pcap(3) library.
