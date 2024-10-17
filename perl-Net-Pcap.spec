@@ -8,7 +8,7 @@ Release:	3
 Summary:	Interface to pcap(3) LBL packet capture library 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}/
+Url:		https://search.cpan.org/dist/%{upstream_name}/
 Source0:    http://www.cpan.org/modules/by-module/Net/Net-Pcap-0.17.tar.gz
 
 BuildRequires:	libpcap-devel
