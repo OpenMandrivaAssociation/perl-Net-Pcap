@@ -11,6 +11,7 @@ Group:		Development/Perl
 Url:		https://search.cpan.org/dist/%{upstream_name}/
 Source0:    http://www.cpan.org/modules/by-module/Net/Net-Pcap-0.17.tar.gz
 
+BuildRequires:	make
 BuildRequires:	libpcap-devel
 BuildRequires:	perl-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
