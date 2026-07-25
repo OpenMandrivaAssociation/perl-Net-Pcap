@@ -1,15 +1,15 @@
 %define	upstream_name	 Net-Pcap
-%define upstream_version 0.17
+%define upstream_version 0.21
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version 0.17
-Release:	3
+Version:    %{upstream_version}
+Release:	1
 
 Summary:	Interface to pcap(3) LBL packet capture library 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:    http://www.cpan.org/modules/by-module/Net/Net-Pcap-0.17.tar.gz
+Url:		https://github.com/maddingue/Net-Pcap
+Source0:    https://cpan.metacpan.org/authors/id/C/CO/CORION/Net-Pcap-0.21.tar.gz
 
 BuildRequires:	make
 BuildRequires:	libpcap-devel
