@@ -1,9 +1,7 @@
 %define	upstream_name	 Net-Pcap
-%define upstream_version 0.21
-
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:	1
+Version:    0.21
+Release:	2
 
 Summary:	Interface to pcap(3) LBL packet capture library 
 License:	GPL+ or Artistic
@@ -26,7 +24,7 @@ monitoring.  Applications include network statistics collection,
 security monitoring, network debugging, etc."
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor --defaultdeps
@@ -61,9 +59,7 @@ security monitoring, network debugging, etc."
 
 * Mon Aug 03 2009 Jérôme Quelin <jquelin@mandriva.org> 0.160.0-1mdv2010.0
 + Revision: 407822
-- rebuild using %%perl_convert_version
-
-* Wed Oct 29 2008 Oden Eriksson <oeriksson@mandriva.com> 0.16-5mdv2009.1
+- rebuild using %0.21 Wed Oct 29 2008 Oden Eriksson <oeriksson@mandriva.com> 0.16-5mdv2009.1
 + Revision: 298348
 - rebuilt against libpcap-1.0.0
 
